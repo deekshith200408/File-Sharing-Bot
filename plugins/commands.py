@@ -118,14 +118,14 @@ async def channel_post(client: Client, message: Message):
     base64_string = base64_bytes.decode("ascii")
     link = f"https://t.me/{client.username}?start={base64_string}"
     reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("🔁 Share URL", url=f'https://telegram.me/share/url?url={link}')]])
-    await reply_text.edit(f"<b>Here is your link</b>\n\n{link}", reply_markup=reply_markup, disable_web_page_preview = True)
+    await reply_text.edit(f"<b>🕵️ʜᴇʀᴇ ɪs ᴜʀs ʟɪɴᴋ⚡</b>\n\n{link}", reply_markup=reply_markup, disable_web_page_preview = True)
 
 
 @Bot.on_message(filters.private & filters.user(ADMINS) & filters.command('batch'))
 async def batch(client: Client, message: Message):
     while True:
         try:
-            first_message = await client.ask(text = "Forward the First Message from the DB Channel (with Quotes)..", chat_id = message.from_user.id, filters=filters.forwarded, timeout=30)
+            first_message = await client.ask(text = "🧸Forward the First Message from the DB Channel,🏅(with Quotes)..", chat_id = message.from_user.id, filters=filters.forwarded, timeout=30)
         except:
             return
         if first_message.forward_from_chat:
@@ -151,4 +151,4 @@ async def batch(client: Client, message: Message):
     base64_string = base64_bytes.decode("ascii")
     link = f"https://t.me/{client.username}?start={base64_string}"
     reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("🔁 Share URL", url=f'https://telegram.me/share/url?url={link}')]])
-    await second_message.reply_text(f"<b>Here is your link</b>\n\n{link}", quote=True, reply_markup=reply_markup)
+    await second_message.reply_text(f"<b>🤹ʜᴇʀᴇ ɪs ᴜʀs ʟɪɴᴋ🏇</b>\n\n{link}", quote=True, reply_markup=reply_markup)
